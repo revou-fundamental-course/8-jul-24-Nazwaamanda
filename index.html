@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+    <!-- first page configuration -->
+    <div id="calculator">
+        <h2>Kalkulator BMI</h2>
+        <p id="static-desc" class="font-desc">Berat badan ideal adalah impian semua orang. 
+            Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, 
+            berat badan ideal juga menandakan kondisi tubuh yang sehat. 
+            Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.
+        <br><strong>Let's go check your BMI !</strong>
+        </p>
+        <!-- main function of BMI calculator -->
+        <div class="card">
+            <form id="form-bmi" name="" class="form">
+                <div class="form-group-g">
+                    <strong>Jenis Kelamin</strong>
+                    <br>
+                    <input type="radio" name="gender" value="m" required="true">
+                    <label for="gender">Pria</label>
+                    <i class="fa-solid fa-mars"></i>
+                    <input type="radio" name="gender" value="f" required="true">
+                    <label for="gender">Wanita</label>
+                    <i class="fa-solid fa-venus"></i>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Umur (Tahun)</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-pencil"></i>
+                        <input name="age" type="number" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Berat Badan (kg)</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-pencil"></i>
+                        <input name="weight" type="number" step="0.1" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="height">Tinggi Badan (cm)</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-pencil"></i>
+                        <input name="height" type="number" step="0.1" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="calculate" type="submit" class="button">Hitung BMI</button>
+                    <button id="reset" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+        <!-- static footer about BMI calculator -->
+        <div class="footer">
+            <p class="font-big">Fitur:</p>
+            <p class="font-desc">
+                1. Menghitung berat-badan ideal (BMI)
+                <br>
+                2. Menentukan kategori berat badan ideal atau tidak
+                <br>
+                3. Mempersiapkan program penurunan berat badan
+            </p>
+            <p id="static-desc" class="font-desc">
+                Kalkulator ini hanya boleh digunakan oleh orang dewasa dan 
+                tidak ada tindakan yang harus diambil berdasarkan nilainya 
+                selain berkonsultasi dengan dokter. <br>
+                Kalkulator akan memberi Anda gambaran tentang perbandingan 
+                berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) 
+                dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan 
+                kuadrat tinggi badan Anda (dalam meter) atau BMI=Kg/M^2.
+            </p>
+        </div>
+    </div>
+    <!-- second page configuration -->
+    <div id="results">
+        <h2>
+            <strong>BMI Results</strong>
+        </h2>
+        <!-- form for BMI calculation results -->
+        <div class="card-1">
+            <form id="" name="" class="form-1">
+                <div class="form-group-1">
+                    <p id="bmi-category-1" class="font-big"></p>
+                    <p id="bmi-result" class="font-big"></p>
+                    <p id="bmi-category-2" class="font-desc"></p>
+                </div>
+                <div class="button-group">
+                    <button id="download" type="submit" class="button">Download BMI Results</button>
+                </div>
+            </form>
+        </div>
+        <!-- footer for explanation related to BMI results -->
+        <div class="footer">
+            <p id="bmi-category-3" class="font-desc"></p>
+            <p id="bmi-category-4" class="font-desc"></p>
+            <p id="static-desc" class="font-desc">If you are worry about your daily meal, you can consult to our Nutritionist expert and register via online to grab the meal plan program now!</p>
+            <div class="button-group">
+                <button id="consultation" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Contact Nutritionist via Apps</button>
+                <button id="registration" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Online Registration</button>
+            </div>
+            <p id="static-desc" class="font-desc">BMI screens for weight categories that may lead to health problems, but it does not diagnose the body fatness or health of an individual.</p>
+        </div>
+        <!-- additional form only for Obese category -->
+        <div id="obese-only" class="card-2">
+            <form id="obese-test" name="" class="form-1">
+                <div class="form-group-1">
+                    <p class="font-big">
+                        Beberapa penyakit karena obesitas:
+                    </p>
+                    <p class="font-desc">
+                        Diabetes
+                        <br>
+                        Darah Tinggi
+                        <br>
+                        Sakit Jantung
+                        <br>
+                        Osteoarthritis
+                    </p>
+                </div>
+                <div class="button-group">
+                    <button id="consultation" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Contact Doctor via Apps</button>
+                    <button id="registration" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Online Registration</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <!-- download playstore appstore section -->
+    <div id="download-me">
+        <p id="" class="font-big">Download BMI Calculator</p>
+        <a href="https://play.google.com/store/games?device=windows" target="_blank">
+            <img src="assets/playstore.png" alt="Play Store" class="playstore">
+        </a>
+        <a href="https://www.apple.com/id/app-store" target="_blank">
+            <img src="assets/appstore.png" alt="App Store" class="appstore">
+        </a>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
